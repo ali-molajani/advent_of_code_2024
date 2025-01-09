@@ -27,6 +27,8 @@ pub mod file_edit {
             })
             .unzip()
     }
+}
+pub mod mathematica {
     pub fn minimum(nums: Vec<u32>) -> u32 {
         let mut min: u32 = nums[0];
         let _ = nums.into_iter().map(|x| {
@@ -35,5 +37,12 @@ pub mod file_edit {
             }
         });
         min
+    }
+    pub fn abs_value(n1: u32, n2: u32) -> u32 {
+        if n1 > n2 {
+            n1 - n2
+        } else {
+            n2 - n1
+        }
     }
 }
