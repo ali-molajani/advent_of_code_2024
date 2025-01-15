@@ -12,6 +12,7 @@ fn main() {
     for i in 0..nums1.len() {
         diff.push(abs_value(nums1[i], nums2[i]));
     }
+
     let ds = diff.iter().sum::<u32>();
     println!("Diff vector: {:?}", diff);
     println!("the sum of diff paths : {ds}");
