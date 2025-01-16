@@ -49,16 +49,14 @@ pub mod mathematica {
     pub fn freq(mut n1: Vec<u32>, mut n2: Vec<u32>) -> Vec<u32> {
         n1.sort();
         n2.sort();
-        let mut frequency1: u32;
-        let mut frequency2: u32;
-        //TODO: find another way not use clone
-        let n1_unique = unique_vec(n1.clone());
+        let mut frequency: u32;
+        let n1_unique = unique_vec(n1);
+        println!("First vector: {:?}", n1_unique);
+        // println!("Second vector: {:?}", n2);
         let mut res = Vec::new();
         for number in n1_unique {
-            // here we calculated frequency in both sides
-            frequency1 = n1.iter().filter(|&n| *n == number).count() as u32;
-            frequency2 = n2.iter().filter(|&n| *n == number).count() as u32;
-            res.push(number * frequency1 * frequency2);
+            frequency = n2.iter().filter(|&n| *n == number).count() as u32;
+            res.push(number * frequency);
         }
         res
     }
